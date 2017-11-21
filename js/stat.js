@@ -26,39 +26,28 @@ window.renderStatistics = function(ctx, names, times) {
 	  
 	  
 	  var histogramHeight = 150;
-	  var step = histogramHeight * (max - 150);
+	  var step = histogramHeight / (max - 0);
 
 	  var barWidth = 40; // px; 
 	  var indent = 90;    // px;
 	  var initialX = 120; // px;
-	  var initialY = 230;  // px;
+	  var initialY = 150;  // px;
 	  var lineHeight = 16;// px;
 
-	  for (var i = 0; i < times.length; i++) {
+	  for (var i = 0 ; i < times.length; i++) {
+	  	if (i < 1) {
+	  	ctx.fillStyle = '#FC0D1B';
+	  	} else {
+	  	ctx.fillStyle = '#020E86'; 
+	  	ctx.globalAlpha = Math.random(0, 1); 
+	  	}
 
-	  	ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+	    ctx.fillRect(initialX + indent * i, 260 - times[i] * step - 10, barWidth, times[i] * step);
 
-	  	//ctx.fillStyle = 'rgba('255, 0, 0, Math.random()')';   Как правильно записывать рандомную прозрачность?
+	  	ctx.fillStyle = '#000';
+    	ctx.fillText(names[i], initialX + indent * i, 270);
 
-	  	ctx.fillRect(initialX + indent * i, initialY, barWidth, times[i] * step);
-
-	  	ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-    	ctx.fillText(names[i], initialX + indent * i, initialY - 10);
-
-    	ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-    	ctx.fillText(Math.floor(times[i]), initialX + indent * i, times[i] * step * 2 + 20);
+    	ctx.fillStyle = '#000';
+    	ctx.fillText(Math.floor(times[i]), initialX + indent * i, 260 - times[i] * step - 20);
 	  }
-
-	  
-	  /*ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-	  ctx.fillRect(120, 150, barWidth, times[0] * step);
-
-	  ctx.fillStyle = 'rgba(2, 14, 144, 1)';
-	  ctx.fillRect(210, 150, barWidth, times[1] * step);
-
-	  ctx.fillStyle = 'rgba(2, 14, 144, 1)';
-	  ctx.fillRect(300, 150, barWidth, times[2] * step);
-
-	  ctx.fillStyle = 'rgba(2, 14, 144, 1)';
-	  ctx.fillRect(390, 150, barWidth, times[3] * step);*/
 	}
