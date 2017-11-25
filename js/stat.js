@@ -32,9 +32,9 @@ window.renderStatistics = function (ctx, names, times) {
   var histogramHeight = 150;
   var step = histogramHeight / (max - 0);
 
-  var barWidth = 40; // px;
-  var indent = 90; // px;
-  var initialX = 120; // px;
+  var barWidth = 40;
+  var indent = 90;
+  var initialX = 120;
 
   var drawHistogramRect = function (x, y, width, height) {
     ctx.fillRect(x, y, width, height);
@@ -46,17 +46,17 @@ window.renderStatistics = function (ctx, names, times) {
   };
   var randomOpacity = Math.random(1, 0);
   for (var i = 0; i < times.length; i++) {
-      if (i = "Вы") {
-          ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-      } else {
-          ctx.fillStyle = 'rgba(0, 0, 0,' + randomOpacity + ')';
-      }
+    if (names[i] === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = 'rgba(2, 14, 134,' + randomOpacity + ')';
+    }
 
-      drawHistogramRect(initialX + indent * i, 260 - times[i] * step - 10, barWidth, times[i] * step);
+    drawHistogramRect(initialX + indent * i, 260 - times[i] * step - 10, barWidth, times[i] * step);
 
-      drawText(names[i], initialX + indent * i, 270, '#000');
+    drawText(names[i], initialX + indent * i, 270, '#000');
 
-      drawText(Math.floor(times[i]), initialX + indent * i, 260 - times[i] * step - 20, '#000');
+    drawText(Math.floor(times[i]), initialX + indent * i, 260 - times[i] * step - 20, '#000');
   }
 };
 
