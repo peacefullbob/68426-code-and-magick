@@ -1,3 +1,5 @@
+'use strict';
+
 window.renderStatistics = function (ctx, names, times) {
   var drawRect = function (x, y, width, height, color) {
     ctx.fillStyle = color;
