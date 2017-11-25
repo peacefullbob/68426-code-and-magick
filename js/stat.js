@@ -44,18 +44,19 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillStyle = color;
     ctx.fillText(array, x, y);
   };
+  var randomOpacity = Math.random(1, 0);
   for (var i = 0; i < times.length; i++) {
-    if (i < 1) {
-      ctx.fillStyle = '#FC0D1B';
-    } else {
-      ctx.fillStyle = 'rgba(0, 0, 0, Math.random(1, 0))';
-    }
+      if (i = "Вы") {
+          ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+      } else {
+          ctx.fillStyle = 'rgba(0, 0, 0,' + randomOpacity + ')';
+      }
 
-    drawHistogramRect(initialX + indent * i, 260 - times[i] * step - 10, barWidth, times[i] * step);
+      drawHistogramRect(initialX + indent * i, 260 - times[i] * step - 10, barWidth, times[i] * step);
 
-    drawText(names[i], initialX + indent * i, 270, '#000');
+      drawText(names[i], initialX + indent * i, 270, '#000');
 
-    drawText(Math.floor(times[i]), initialX + indent * i, 260 - times[i] * step - 20, '#000');
+      drawText(Math.floor(times[i]), initialX + indent * i, 260 - times[i] * step - 20, '#000');
   }
 };
 
