@@ -24,13 +24,13 @@ window.renderStatistics = function (ctx, names, times) {
 
   var getMaxElement = function (array) {
     var max = array[0];
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 1; i < array.length; i++) {
       var time = array[i];
       if (time > max) {
         max = time;
       }
     }
-    return (max);
+    return max;
   };
 
   var max = getMaxElement(times);
