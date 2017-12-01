@@ -40,7 +40,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(2, 14, 134,' + Math.random(1, 0) + ')';
+      ctx.fillStyle = 'rgba(2, 14, 134,' + Math.random() + ')';
     }
 
     drawRect(INITIAL_X + INDENT * i, 260 - times[i] * STEP - 10, BAR_WIDTH, times[i] * STEP);
