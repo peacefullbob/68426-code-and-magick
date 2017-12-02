@@ -12,17 +12,19 @@ function getRandom(number) {
   return Math.floor(Math.random() * number);
 }
 
-var wizards = [];
-
-for (var i = 0; i < 3; i++) {
-  var wizard = {
-    name: surnames[getRandom(surnames.length)] + ' ' + names[getRandom(names.length)],
-    coatColor: coatsColors[getRandom(coatsColors.length)],
-    eyesColor: eyesColors[getRandom(eyesColors.length)]
-  };
-  wizards[i] = wizard;
-  wizards.push(wizards[i]);
+function getWizards() {
+  var wizards = [];
+  for (var i = 0; i < 4; i++) {
+    wizards.push({
+      name: surnames[getRandom(surnames.length)] + ' ' + names[getRandom(names.length)],
+      coatColor: coatsColors[getRandom(coatsColors.length)],
+      eyesColor: eyesColors[getRandom(eyesColors.length)]
+    });
+  }
+  return wizards;
 }
+
+var wizards = getWizards();
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
