@@ -10,9 +10,8 @@ var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 function getRandom(array) {
   var rand = Math.floor(Math.random() * array.length);
-  return (rand);
+  return rand;
 }
-
 
 var wizards = [
   {
