@@ -48,4 +48,3 @@ window.renderStatistics = function (ctx, names, times) {
     drawText(Math.floor(times[i]), INITIAL_X + INDENT * i, 260 - times[i] * STEP - 20, '#000');
   }
 };
-
