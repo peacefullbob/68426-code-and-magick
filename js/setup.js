@@ -35,7 +35,7 @@ var wizards = [
     coatColor: coatsColors[getRandom(coatsColors)],
     eyesColor: eyesColors[getRandom(eyesColors)]
   }
-]
+];
 
 
 var similarListElement = document.querySelector('.setup-similar-list');
