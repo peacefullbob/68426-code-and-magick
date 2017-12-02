@@ -9,8 +9,7 @@ var coatsColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161
 var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 function getRandom(number) {
-  var randNumber = Math.floor(Math.random() * number);
-  return randNumber;
+  return Math.floor(Math.random() * number);
 }
 
 var wizards = [];
@@ -27,17 +26,17 @@ for (var i = 0; i < 3; i++) {
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-var renderWizard = function (wizard) {
+function renderWizard(wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
   return wizardElement;
-};
+}
 
 var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
+for (var j = 0; j < wizards.length; j++) {
+  fragment.appendChild(renderWizard(wizards[j]));
 }
 similarListElement.appendChild(fragment);
 
