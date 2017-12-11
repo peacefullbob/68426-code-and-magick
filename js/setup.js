@@ -4,6 +4,7 @@ var names = ['Иван', 'Хуан', 'Себастьян', 'Мария', 'Кри
 var surnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var coatsColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)]'];
 var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
+var fireballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 function getRandom(number) {
   return Math.floor(Math.random() * number);
@@ -93,18 +94,15 @@ setupClose.addEventListener('keydown', function (evt) {
 });
 
 coatColor.addEventListener('click', function () {
-  var colorsCoats = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)]'];
-  changeColor(coatColor, colorsCoats);
+  changeColor(coatColor, coatsColors);
 });
 
 wizardEyes.addEventListener('click', function () {
-  var wizardsEyes = ['black', 'red', 'blue', 'yellow', 'green'];
-  changeColor(wizardEyes, wizardsEyes);
+  changeColor(wizardEyes, eyesColors);
 });
 
 setupFireball.addEventListener('click', function () {
-  var faerballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
-  var element = faerballColors[getRandom(faerballColors.length)];
-  setupFireball.style.background = element;
-  return element;
+  var elementColor = fireballColors[getRandom(fireballColors.length)];
+  setupFireball.style.background = elementColor;
+  return elementColor;
 });
