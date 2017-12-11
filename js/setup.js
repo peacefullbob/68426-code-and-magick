@@ -81,7 +81,7 @@ setupOpenIcon.addEventListener('keydown', function (evt) {
 });
 
 document.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ESC_KEYCODE ) {
+  if (evt.keyCode === ESC_KEYCODE) {
     closePopup(setup);
   }
 });
