@@ -77,7 +77,7 @@ setupClose.addEventListener('click', function () {
 
 setupOpenIcon.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
-    openPopup();
+    openPopup(setup);
   }
 });
 
